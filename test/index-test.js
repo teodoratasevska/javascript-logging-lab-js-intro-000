@@ -2,9 +2,9 @@ const expect = require('expect')
 const fs = require('fs')
 const jsdom = require('jsdom')
 const path = require('path')
-console.error("HALP!")
-console.log("I would be a logger.")
-console.error("HALP!")
+
+
+
 
 
 describe('index', () => {
@@ -12,6 +12,7 @@ describe('index', () => {
   const src = path.resolve(__dirname, '..', 'index.js')
 
   it('calls console.error()', done => {
+    console.error("HALP!")
     const spy = expect.spyOn(console, 'error').andCallThrough()
 
     jsdom.env(html, [src], {
@@ -24,6 +25,7 @@ describe('index', () => {
   })
 
   it('calls console.log()', done => {
+    console.log("I would be a logger.")
     const spy = expect.spyOn(console, 'log').andCallThrough()
 
     jsdom.env(html, [src], {
@@ -36,6 +38,7 @@ describe('index', () => {
   })
 
   it('calls console.warn()', done => {
+    console.warn("lemme pass")
     const spy = expect.spyOn(console, 'warn').andCallThrough()
 
     jsdom.env(html, [src], {
