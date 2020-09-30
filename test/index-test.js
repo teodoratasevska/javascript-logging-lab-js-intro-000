@@ -4,6 +4,7 @@ const jsdom = require('jsdom')
 const path = require('path')
 console.error("HALP!")
 console.log("I would be a logger.")
+console.error("HALP!")
 
 
 describe('index', () => {
